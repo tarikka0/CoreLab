@@ -1,0 +1,453 @@
+/* TEMEL AYARLAR */
+:root {
+    --primary: #6C5CE7;
+    --primary-dark: #5649c0;
+    --text: #2D3436;
+    --text-light: #636E72;
+    --bg: #F9F9F9;
+    --card: #FFFFFF;
+    --error: #FF7675;
+    --success: #55EFC4;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.particles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(108, 92, 231, 0.1) 0%, rgba(108, 92, 231, 0.05) 100%);
+    z-index: -1;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    padding: 2rem;
+    text-align: center;
+}
+
+/* LOGO */
+.logo {
+    margin-bottom: 2rem;
+}
+
+.logo-icon {
+    font-size: 4rem;
+    color: var(--primary);
+    margin-bottom: 1rem;
+    text-shadow: 0 5px 15px rgba(108, 92, 231, 0.3);
+}
+
+.logo h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin: 0;
+    letter-spacing: -1px;
+}
+
+.logo h1 span {
+    color: var(--primary);
+}
+
+.logo p {
+    color: var(--text-light);
+    font-size: 1.2rem;
+    margin-top: 0.5rem;
+}
+
+/* FORM KONTEYNIRI */
+.form-container {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.login-form, .register-form {
+    background: var(--card);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: left;
+}
+
+/* INPUT ALANLARI */
+.input-group {
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+.input-group i {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-light);
+}
+
+.input-group input, .input-group select {
+    width: 100%;
+    padding: 12px 15px 12px 45px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s;
+}
+
+.input-group input:focus, .input-group select:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(108, 92, 231, 0.2);
+    outline: none;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: var(--text-light);
+}
+
+/* BUTONLAR */
+.btn-login, .btn-register {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.btn-login {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    color: white;
+}
+
+.btn-register {
+    background: white;
+    color: var(--primary);
+    border: 2px solid var(--primary);
+}
+
+.btn-login:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(108, 92, 231, 0.4);
+}
+
+.btn-register:hover {
+    background: var(--primary);
+    color: white;
+}
+
+/* DİĞER */
+.options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1rem 0;
+    font-size: 0.9rem;
+}
+
+.options a {
+    color: var(--primary);
+    text-decoration: none;
+}
+
+.alert {
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+}
+
+.error {
+    background-color: #FFEBEE;
+    color: #C62828;
+}
+
+.success {
+    background-color: #E8F5E9;
+    color: #2E7D32;
+}
+/* INPUT TAŞMA DÜZELTMESİ */
+.input-group {
+    width: 100%;
+    box-sizing: border-box; /* Kenarlıkları dahil hesapla */
+}
+
+.input-group input, 
+.input-group select {
+    width: calc(100% - 60px); /* İkonlar için boşluk bırak */
+    padding-left: 45px; /* İkon alanı */
+    padding-right: 15px; /* Sağ boşluk */
+    margin: 0 auto; /* Ortala */
+    box-sizing: border-box; /* Padding'i genişliğe dahil et */
+}
+
+/* ÖĞRETMEN PANELİ */
+.teacher-container {
+    display: flex;
+    min-height: 100vh;
+    background-color: #f5f5f5;
+}
+
+.sidebar {
+    width: 250px;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    color: white;
+    padding: 1rem;
+    box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+}
+
+.main-content {
+    flex: 1;
+    padding: 2rem;
+}
+
+/* Tablolar */
+.assignments-table, .submissions-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+    background: white;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.assignments-table th, 
+.assignments-table td,
+.submissions-table th,
+.submissions-table td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #eee;
+    text-align: left;
+}
+
+.assignments-table th {
+    background: var(--primary);
+    color: white;
+}
+
+/* Butonlar */
+.btn-view, .btn-edit, .btn-delete {
+    padding: 5px 10px;
+    border-radius: 4px;
+    color: white;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.btn-view { background: #4CAF50; }
+.btn-edit { background: #2196F3; }
+.btn-delete { background: #F44336; }
+
+.student-table {
+    width: 80%;
+    margin: 40px auto;
+    border-collapse: collapse;
+  }
+  
+  .student-table th,
+  .student-table td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+  }
+  
+  .student-table th {
+    background-color: #3498db;
+    color: white;
+  }
+  
+  .student-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  /* Side Panel Stilleri */
+.side-panel {
+    position: fixed;
+    top: 0;
+    right: -450px;
+    width: 450px;
+    height: 100vh;
+    background: var(--white);
+    box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+    z-index: 2000;
+    transition: var(--transition);
+    overflow-y: auto;
+}
+
+.side-panel.active {
+    right: 0;
+}
+
+.side-panel-header {
+    padding: 20px;
+    background: var(--primary);
+    color: var(--white);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.side-panel-header h3 {
+    margin: 0;
+    font-size: 1.3rem;
+}
+
+.side-panel-close {
+    background: none;
+    border: none;
+    color: var(--white);
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.side-panel-content {
+    padding: 20px;
+}
+
+/* Overlay */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 1999;
+    display: none;
+}
+
+.overlay.active {
+    display: block;
+}
+
+/* Detay Sayfası Stilleri */
+.assignment-detail {
+    margin-bottom: 20px;
+}
+
+.assignment-detail h4 {
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    color: var(--primary-dark);
+}
+
+.file-section {
+    margin: 20px 0;
+    padding: 15px;
+    background: var(--light);
+    border-radius: 8px;
+}
+
+.file-section h5 {
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+.file-link {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    margin-bottom: 8px;
+    background: var(--white);
+    border-radius: 6px;
+    transition: var(--transition);
+    text-decoration: none;
+    color: var(--dark);
+    border: 1px solid var(--light-gray);
+}
+
+.file-link:hover {
+    background: var(--primary-light);
+    color: var(--white);
+    border-color: var(--primary-light);
+}
+
+.file-link i {
+    margin-right: 10px;
+    font-size: 1.2rem;
+}
+
+.description-section {
+    margin: 20px 0;
+}
+
+.description-section h5 {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+.description-section p {
+    line-height: 1.6;
+    color: var(--dark);
+}
+
+.submission-info-section {
+    margin-top: 30px;
+}
+
+.submission-info-section h5 {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--light-gray);
+}
+
+.submission-status {
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.submission-status.submitted {
+    background: rgba(0, 184, 148, 0.1);
+    color: var(--success);
+}
+
+.submission-status.not-submitted {
+    background: rgba(214, 48, 49, 0.1);
+    color: var(--danger);
+}
+
+.submission-files {
+    margin-top: 15px;
+}
+
+.submission-note {
+    margin-top: 15px;
+    padding: 15px;
+    background: var(--light);
+    border-radius: 8px;
+}
+
+.submission-note h6 {
+    margin-bottom: 10px;
+    font-size: 1rem;
+}
